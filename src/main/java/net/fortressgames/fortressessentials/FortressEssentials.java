@@ -3,8 +3,7 @@ package net.fortressgames.fortressessentials;
 import lombok.Getter;
 import net.fortressgames.fortressapi.commands.CommandModule;
 import net.fortressgames.fortressapi.utils.ConsoleMessage;
-import net.fortressgames.fortressessentials.commands.MeCommand;
-import net.fortressgames.fortressessentials.commands.SeedCommand;
+import net.fortressgames.fortressessentials.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class FortressEssentials extends JavaPlugin {
@@ -31,6 +30,10 @@ public class FortressEssentials extends JavaPlugin {
 		// Commands
 		CommandModule.registerCommand(new SeedCommand());
 		CommandModule.registerCommand(new MeCommand());
+		CommandModule.registerCommand(new ClearCommand());
+		CommandModule.registerCommand(new OpCommand());
+		CommandModule.registerCommand(new DeopCommand());
+		CommandModule.registerCommand(new DifficultyCommand());
 
 		getLogger().info(ConsoleMessage.GREEN + "Version: " + getDescription().getVersion() + " Enabled!" + ConsoleMessage.RESET);
 	}
@@ -44,14 +47,13 @@ public class FortressEssentials extends JavaPlugin {
 	}
 }
 
+//todo bugs
+// op offline
+
 //todo
-// clear, ic
-// deop, op
-// difficulty
 // gamemode, gm, gmc, gms, gma, gmsp
-// kill
 // list
-// say
+// say ??
 // time
 // weather
 // whitelist
