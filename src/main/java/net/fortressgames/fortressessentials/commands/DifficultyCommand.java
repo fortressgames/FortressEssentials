@@ -40,7 +40,7 @@ public class DifficultyCommand extends CommandBase {
 		}
 
 		if(args.length == 0) {
-			sender.sendMessage(EssentialLang.DIFFICULTY);
+			sender.sendMessage(EssentialLang.DIFFICULTY_USAGE);
 			return;
 		}
 

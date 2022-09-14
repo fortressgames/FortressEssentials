@@ -10,8 +10,11 @@ public class EssentialLang {
 	public static final String ME_USAGE = Lang.BLUE + "Usage: /me [message]";
 	public static final String OP_USAGE = Lang.BLUE + "usage: /op <player>";
 	public static final String DE_OP_USAGE = Lang.BLUE + "usage: /deop <player>";
-	public static final String DIFFICULTY = Lang.BLUE + "usage: /difficulty <difficulty>";
+	public static final String DIFFICULTY_USAGE = Lang.BLUE + "usage: /difficulty <difficulty>";
+	public static final String GAMEMODE_USAGE = Lang.BLUE + "usage: /gamemode <type>";
 
+	public static final String UNKNOWN_GAMEMODE = Lang.RED + "Unknown gamemode!";
+	public static final String GAMEMODE_UPDATE = Lang.GREEN + "Your gamemode has been updated!";
 	public static final String CLEAR_INV = Lang.GREEN + "Inventory cleared!";
 	public static final String CLEAR_INV_ADMIN = Lang.GREEN + "Your inventory has been cleared by an admin!";
 	public static final String ALREADY_OP = Lang.RED + "Player is already a server operator!";
@@ -38,5 +41,8 @@ public class EssentialLang {
 	}
 	public static String difficulty(String difficulty) {
 		return Lang.GREEN + "Difficulty: " + ChatColor.WHITE + difficulty;
+	}
+	public static String updatedGamemode(String target) {
+		return Lang.GREEN + "You updated " + target + " gamemode!";
 	}
 }

@@ -34,6 +34,9 @@ public class FortressEssentials extends JavaPlugin {
 		CommandModule.registerCommand(new OpCommand());
 		CommandModule.registerCommand(new DeopCommand());
 		CommandModule.registerCommand(new DifficultyCommand());
+		CommandModule.registerCommand(new GameModeCommand());
+		CommandModule.registerCommand(new OpListCommand());
+		CommandModule.registerCommand(new ListCommand());
 
 		getLogger().info(ConsoleMessage.GREEN + "Version: " + getDescription().getVersion() + " Enabled!" + ConsoleMessage.RESET);
 	}
@@ -47,12 +50,7 @@ public class FortressEssentials extends JavaPlugin {
 	}
 }
 
-//todo bugs
-// op offline
-
 //todo
-// gamemode, gm, gmc, gms, gma, gmsp
-// list
 // say ??
 // time
 // weather
