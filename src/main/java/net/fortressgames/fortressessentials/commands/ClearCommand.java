@@ -9,10 +9,8 @@ import net.fortressgames.fortressessentials.utils.TargetSelection;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ClearCommand extends CommandBase {
@@ -59,7 +57,7 @@ public class ClearCommand extends CommandBase {
 	}
 
 	@Override
-	public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, String[] args) {
+	public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
 
 		if(args.length == 1) {
 			return new ArrayList<>() {

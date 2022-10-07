@@ -8,7 +8,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,20 +46,25 @@ public class GameModeCommand extends CommandBase {
 			return;
 		}
 
-		Player target = Bukkit.getPlayer(args[1]);
+		if(sender.hasPermission(EssentialPermissionsLang.GAMEMODE_OTHER)) {
+			Player target = Bukkit.getPlayer(args[1]);
 
-		if(target == null) {
-			sender.sendMessage(Lang.PLAYER_NOT_FOUND);
-			return;
+			if(target == null) {
+				sender.sendMessage(Lang.PLAYER_NOT_FOUND);
+				return;
+			}
+
+			target.setGameMode(gameMode);
+			target.sendMessage(EssentialLang.GAMEMODE_UPDATE);
+			sender.sendMessage(EssentialLang.updatedGamemode(target.getName()));
+
+		} else {
+			sender.sendMessage(Lang.NO_PERMISSION);
 		}
-
-		target.setGameMode(gameMode);
-		target.sendMessage(EssentialLang.GAMEMODE_UPDATE);
-		sender.sendMessage(EssentialLang.updatedGamemode(target.getName()));
 	}
 
 	@Override
-	public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, String[] args) {
+	public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
 		return Arrays.asList("survival", "creative", "adventure", "spectator", "s", "c", "a", "spe");
 	}
 }
