@@ -66,6 +66,10 @@ public class TimeCommand extends CommandBase {
 
 	@Override
 	public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
-		return Arrays.asList("set", "add", "query", "day", "night");
+		if(args.length == 1) {
+			return Arrays.asList("set", "add", "query", "day", "night");
+		}
+
+		return super.tabComplete(sender, alias, args);
 	}
 }
