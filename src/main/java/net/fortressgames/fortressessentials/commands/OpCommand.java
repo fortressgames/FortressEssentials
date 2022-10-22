@@ -2,7 +2,7 @@ package net.fortressgames.fortressessentials.commands;
 
 import net.fortressgames.fortressapi.Lang;
 import net.fortressgames.fortressapi.commands.CommandBase;
-import net.fortressgames.fortressapi.players.FortressPlayerModule;
+import net.fortressgames.fortressapi.players.PlayerModule;
 import net.fortressgames.fortressapi.utils.MojangAPIUtils;
 import net.fortressgames.fortressessentials.EssentialLang;
 import net.fortressgames.fortressessentials.EssentialPermissionsLang;
@@ -48,7 +48,7 @@ public class OpCommand extends CommandBase {
 					target.getPlayer().sendMessage(EssentialLang.OPED);
 				}
 
-				FortressPlayerModule.getInstance().getOnlinePlayers().forEach(pp -> {
+				PlayerModule.getInstance().getOnlinePlayers().forEach(pp -> {
 					if(pp.isOp()) {
 						pp.sendMessage(EssentialLang.opedPlayer(profile.getName()));
 					}

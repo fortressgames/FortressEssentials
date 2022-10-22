@@ -1,7 +1,7 @@
 package net.fortressgames.fortressessentials.commands;
 
 import net.fortressgames.fortressapi.commands.CommandBase;
-import net.fortressgames.fortressapi.players.FortressPlayerModule;
+import net.fortressgames.fortressapi.players.PlayerModule;
 import net.fortressgames.fortressessentials.EssentialLang;
 import net.fortressgames.fortressessentials.EssentialPermissionsLang;
 import org.bukkit.command.CommandSender;
@@ -32,10 +32,10 @@ public class SayCommand extends CommandBase {
 		}
 
 		if(sender instanceof Player player) {
-			FortressPlayerModule.getInstance().getOnlinePlayers().forEach(target -> target.sendMessage(EssentialLang.say(player.getDisplayName(), message.toString())));
+			PlayerModule.getInstance().getOnlinePlayers().forEach(target -> target.sendMessage(EssentialLang.say(player.getDisplayName(), message.toString())));
 
 		} else {
-			FortressPlayerModule.getInstance().getOnlinePlayers().forEach(target -> target.sendMessage(EssentialLang.say("Console", message.toString())));
+			PlayerModule.getInstance().getOnlinePlayers().forEach(target -> target.sendMessage(EssentialLang.say("Console", message.toString())));
 		}
 	}
 }

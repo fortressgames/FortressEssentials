@@ -2,7 +2,7 @@ package net.fortressgames.fortressessentials.commands;
 
 import net.fortressgames.fortressapi.Lang;
 import net.fortressgames.fortressapi.commands.CommandBase;
-import net.fortressgames.fortressapi.players.FortressPlayerModule;
+import net.fortressgames.fortressapi.players.PlayerModule;
 import net.fortressgames.fortressessentials.EssentialPermissionsLang;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -23,10 +23,10 @@ public class ListCommand extends CommandBase {
 
 		sender.sendMessage(Lang.LINE);
 		sender.sendMessage(ChatColor.YELLOW + ChatColor.BOLD.toString() + "Online players: " + ChatColor.GRAY + "(There are " +
-				FortressPlayerModule.getInstance().getOnlinePlayers().size() + " of " + Bukkit.getMaxPlayers() + " players online)");
+				PlayerModule.getInstance().getOnlinePlayers().size() + " of " + Bukkit.getMaxPlayers() + " players online)");
 
 		List<String> players = new ArrayList<>();
-		for(Player pp : FortressPlayerModule.getInstance().getOnlinePlayers()) {
+		for(Player pp : PlayerModule.getInstance().getOnlinePlayers()) {
 			players.add(pp.getName());
 		}
 

@@ -2,7 +2,7 @@ package net.fortressgames.fortressessentials.commands;
 
 import net.fortressgames.fortressapi.Lang;
 import net.fortressgames.fortressapi.commands.CommandBase;
-import net.fortressgames.fortressapi.players.FortressPlayerModule;
+import net.fortressgames.fortressapi.players.PlayerModule;
 import net.fortressgames.fortressessentials.EssentialLang;
 import net.fortressgames.fortressessentials.EssentialPermissionsLang;
 import net.fortressgames.fortressessentials.utils.TargetSelection;
@@ -68,7 +68,7 @@ public class ClearCommand extends CommandBase {
 					add("@r");
 					add("@s");
 
-					FortressPlayerModule.getInstance().getOnlinePlayers().forEach(player -> add(player.getName()));
+					PlayerModule.getInstance().getOnlinePlayers().forEach(player -> add(player.getName()));
 				}
 			};
 		}

@@ -1,6 +1,6 @@
 package net.fortressgames.fortressessentials.utils;
 
-import net.fortressgames.fortressapi.players.FortressPlayerModule;
+import net.fortressgames.fortressapi.players.PlayerModule;
 import org.bukkit.Bukkit;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.CommandSender;
@@ -26,8 +26,8 @@ public enum TargetSelection {
 
 		return new ArrayList<>() {
 			{
-				if(FortressPlayerModule.getInstance().getPlayer(arg) != null) {
-					add(FortressPlayerModule.getInstance().getPlayer(arg));
+				if(PlayerModule.getInstance().getPlayer(arg) != null) {
+					add(PlayerModule.getInstance().getPlayer(arg));
 				}
 			}
 		};
@@ -37,7 +37,7 @@ public enum TargetSelection {
 		List<Entity> entities = new ArrayList<>();
 
 		switch (selection) {
-			case a -> entities.addAll(FortressPlayerModule.getInstance().getOnlinePlayers());
+			case a -> entities.addAll(PlayerModule.getInstance().getOnlinePlayers());
 			case e -> Bukkit.getWorlds().forEach(world -> entities.addAll(world.getEntities()));
 			case p -> {
 				if(sender instanceof Entity) {
@@ -48,7 +48,7 @@ public enum TargetSelection {
 				if(sender instanceof BlockCommandSender commandBlock) {
 
 					Player target = null;
-					for(Player pp : FortressPlayerModule.getInstance().getOnlinePlayers()) {
+					for(Player pp : PlayerModule.getInstance().getOnlinePlayers()) {
 
 						if(target == null) {
 							target = pp;
@@ -65,8 +65,8 @@ public enum TargetSelection {
 					entities.add(target);
 				}
 			}
-			case r -> entities.add(FortressPlayerModule.getInstance().getOnlinePlayers().get(
-					new Random().nextInt(FortressPlayerModule.getInstance().getOnlinePlayers().size())
+			case r -> entities.add(PlayerModule.getInstance().getOnlinePlayers().get(
+					new Random().nextInt(PlayerModule.getInstance().getOnlinePlayers().size())
 			));
 			case s -> {
 				if(sender instanceof Entity) entities.add((Entity) sender);

@@ -2,7 +2,7 @@ package net.fortressgames.fortressessentials.commands;
 
 import net.fortressgames.fortressapi.Lang;
 import net.fortressgames.fortressapi.commands.CommandBase;
-import net.fortressgames.fortressapi.players.FortressPlayerModule;
+import net.fortressgames.fortressapi.players.PlayerModule;
 import net.fortressgames.fortressapi.utils.MojangAPIUtils;
 import net.fortressgames.fortressessentials.EssentialLang;
 import net.fortressgames.fortressessentials.EssentialPermissionsLang;
@@ -43,7 +43,7 @@ public class DeopCommand extends CommandBase {
 					target.getPlayer().sendMessage(EssentialLang.DE_OPED);
 				}
 
-				FortressPlayerModule.getInstance().getOnlinePlayers().forEach(pp -> {
+				PlayerModule.getInstance().getOnlinePlayers().forEach(pp -> {
 					if(pp.isOp()) {
 						pp.sendMessage(EssentialLang.deopedPlayer(profile.getName()));
 					}
