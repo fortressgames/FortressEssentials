@@ -28,6 +28,11 @@ public class WhitelistCommand extends CommandBase {
 			return;
 		}
 
+		if(args[0].equalsIgnoreCase("clear")) {
+			Bukkit.getWhitelistedPlayers().forEach(offlinePlayer -> offlinePlayer.setWhitelisted(false));
+			return;
+		}
+
 		if(args[0].equalsIgnoreCase("on")) {
 			Bukkit.setWhitelist(true);
 			sender.sendMessage(EssentialLang.WHITE_LIST_ON);
@@ -91,7 +96,7 @@ public class WhitelistCommand extends CommandBase {
 	@Override
 	public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
 		if(args.length == 1) {
-			return Arrays.asList("add", "remove", "on", "off", "list");
+			return Arrays.asList("add", "remove", "on", "off", "list", "clear");
 		}
 
 		return super.tabComplete(sender, alias, args);
