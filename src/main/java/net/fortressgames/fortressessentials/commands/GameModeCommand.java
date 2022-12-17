@@ -65,6 +65,10 @@ public class GameModeCommand extends CommandBase {
 
 	@Override
 	public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
-		return Arrays.asList("survival", "creative", "adventure", "spectator", "s", "c", "a", "spe");
+		if(args.length == 1) {
+			return Arrays.asList("survival", "creative", "adventure", "spectator", "s", "c", "a", "spe");
+		}
+
+		return super.tabComplete(sender, alias, args);
 	}
 }

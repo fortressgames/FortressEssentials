@@ -50,6 +50,15 @@ public class WhitelistCommand extends CommandBase {
 			return;
 		}
 
+		if(args[0].equalsIgnoreCase("query")) {
+			if(Bukkit.hasWhitelist()) {
+				sender.sendMessage(EssentialLang.whitelistQuery("ON"));
+			} else {
+				sender.sendMessage(EssentialLang.whitelistQuery("OFF"));
+			}
+			return;
+		}
+
 		if(args.length == 2) {
 			MojangAPIUtils.getUUID((successful, result, exception) -> {
 
@@ -96,7 +105,7 @@ public class WhitelistCommand extends CommandBase {
 	@Override
 	public List<String> tabComplete(CommandSender sender, String alias, String[] args) {
 		if(args.length == 1) {
-			return Arrays.asList("add", "remove", "on", "off", "list", "clear");
+			return Arrays.asList("add", "remove", "on", "off", "list", "clear", "query");
 		}
 
 		return super.tabComplete(sender, alias, args);

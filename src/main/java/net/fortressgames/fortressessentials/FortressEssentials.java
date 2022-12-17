@@ -80,8 +80,6 @@ public class FortressEssentials extends JavaPlugin {
 		CommandModule.registerCommand(new SeedCommand());
 		CommandModule.registerCommand(new MeCommand());
 		CommandModule.registerCommand(new ClearCommand());
-		CommandModule.registerCommand(new OpCommand());
-		CommandModule.registerCommand(new DeopCommand());
 		CommandModule.registerCommand(new DifficultyCommand());
 		CommandModule.registerCommand(new GameModeCommand());
 		CommandModule.registerCommand(new OpListCommand());
