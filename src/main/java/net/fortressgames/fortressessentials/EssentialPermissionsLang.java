@@ -17,6 +17,7 @@ public class EssentialPermissionsLang {
 	public static final String TIME = "fortress.essentials.command.time";
 	public static final String SAY = "fortress.essentials.command.say";
 	public static final String SPAWN = "fortress.essentials.command.spawn";
+	public static final String NV = "fortress.essentials.command.nv";
 
 	public static final String PROTECT_USE = "fortress.essentials.protect.use";
 	public static final String PROTECT_BLOCK_BREAK = "fortress.essentials.protect.blockbreak";

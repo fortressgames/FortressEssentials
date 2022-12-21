@@ -26,6 +26,9 @@ public class EssentialLang {
 	public static final String DROP_ITEMS = Lang.RED + "You cannot drop items!";
 	public static final String SPAWN_TP = Lang.GREEN + "Teleporting to spawn!";
 
+	public static final String NIGHT_VISION_REMOVED = Lang.GREEN + "Nightvision removed!";
+	public static final String NIGHT_VISION_ADDED = Lang.GREEN + "Nightvision added!";
+
 	public static String whitelistQuery(String value) {
 		return Lang.GREEN + "Whitelist is: " + ChatColor.WHITE + value;
 	}

@@ -90,6 +90,7 @@ public class FortressEssentials extends JavaPlugin {
 		CommandModule.registerCommand(new TimeCommand());
 		CommandModule.registerCommand(new SayCommand());
 		CommandModule.registerCommand(new SpawnCommand());
+		CommandModule.registerCommand(new NightVision());
 
 		// Listeners
 		this.getServer().getPluginManager().registerEvents(new PreCommandListener(), this);
