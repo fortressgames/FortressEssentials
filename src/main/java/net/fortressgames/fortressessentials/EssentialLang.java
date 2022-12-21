@@ -25,6 +25,7 @@ public class EssentialLang {
 	public static final String TIME_VALUE_ERROR = Lang.RED + "Unknown time!";
 	public static final String DROP_ITEMS = Lang.RED + "You cannot drop items!";
 	public static final String SPAWN_TP = Lang.GREEN + "Teleporting to spawn!";
+	public static final String UNKNOWN_WORLD = Lang.RED + "Unknown world!";
 
 	public static final String NIGHT_VISION_REMOVED = Lang.GREEN + "Nightvision removed!";
 	public static final String NIGHT_VISION_ADDED = Lang.GREEN + "Nightvision added!";

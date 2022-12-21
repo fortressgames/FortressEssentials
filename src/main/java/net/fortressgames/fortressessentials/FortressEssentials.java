@@ -7,6 +7,8 @@ import net.fortressgames.fortressessentials.commands.*;
 import net.fortressgames.fortressessentials.listeners.PreCommandListener;
 import net.fortressgames.fortressessentials.listeners.UseBlocksListener;
 import net.fortressgames.fortressessentials.listeners.protect.*;
+import org.bukkit.Bukkit;
+import org.bukkit.WorldCreator;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -67,6 +69,11 @@ public class FortressEssentials extends JavaPlugin {
 			getConfig().set("BlockIntractableItems", new ArrayList<>());
 			saveConfig();
 		}
+
+		if(!getConfig().contains("Worlds")) {
+			getConfig().set("Worlds", new ArrayList<>());
+			saveConfig();
+		}
 	}
 
 	/**
@@ -75,6 +82,9 @@ public class FortressEssentials extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		instance = this;
+
+		// Load worlds
+		getConfig().getStringList("Worlds").forEach(name -> Bukkit.createWorld(new WorldCreator(name)));
 
 		// Commands
 		CommandModule.registerCommand(new SeedCommand());
@@ -91,6 +101,7 @@ public class FortressEssentials extends JavaPlugin {
 		CommandModule.registerCommand(new SayCommand());
 		CommandModule.registerCommand(new SpawnCommand());
 		CommandModule.registerCommand(new NightVision());
+		CommandModule.registerCommand(new WorldCommand());
 
 		// Listeners
 		this.getServer().getPluginManager().registerEvents(new PreCommandListener(), this);
